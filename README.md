@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# Animation Portfolio — Ghulam Qadir
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive portfolio website featuring smooth scroll animations, 3D card tilt effects, and a dynamic project showcase. Built with React, Vite, TypeScript, and Framer Motion.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*(Deploy to Netlify/Vercel and add your URL here)*
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Smooth Animations** — Scroll-triggered reveals with Framer Motion
+- **3D Tilt Cards** — Interactive project cards with mouse-tracking perspective
+- **Project Filtering** — Filter by Web Dev, Data Science, and Machine Learning
+- **Responsive Design** — Works on desktop, tablet, and mobile
+- **Project Modal** — Detailed view with features, tech stack, and links
+- **Dark Theme** — Modern dark UI with gradient accents
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Category | Technologies |
+|----------|-------------|
+| Framework | React 18 + Vite |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| Icons | Lucide React |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Projects Showcase
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| # | Project | Category |
+|---|---------|----------|
+| 1 | **Mentor Michael FX** — Trading Platform | Web Dev |
+| 2 | SaaS Analytics Dashboard | Web Dev |
+| 3 | Portfolio CMS Builder | Web Dev |
+| 4 | Real Estate Listing App | Web Dev |
+| 5 | HR Resume Parser | ML |
+| 6 | Patient Attendance Predictor | Data Science |
+| 7 | Sentiment Analysis API | ML |
+| 8 | Cafe Chatbot AI | ML |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/gh-qadir04/Animation_Portfolio_Ghulam-Qadir.git
+
+# Navigate to project
+cd Animation_Portfolio_Ghulam-Qadir
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+📂 Project Structure:
+
+├── public/
+│   └── assets/              # Project images & screenshots
+├── src/
+│   ├── components/          # Reusable components
+│   ├── sections/            # Page sections (Hero, Projects, etc.)
+│   ├── styles/              # CSS/Tailwind styles
+│   └── App.tsx              # Main app component
+├── .gitignore
+├── index.html
+├── package.json
+├── tailwind.config.js
+├── tsconfig.json
+└── vite.config.ts
