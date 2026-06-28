@@ -217,7 +217,7 @@ export default function Contact() {
                       onChange={handleChange}
                       onFocus={() => setFocusedField('name')}
                       onBlur={() => setFocusedField(null)}
-                      placeholder="John Doe"
+                      placeholder="Ghulam Qadir"
                       required
                     />
                   </div>
@@ -233,7 +233,7 @@ export default function Contact() {
                       onChange={handleChange}
                       onFocus={() => setFocusedField('email')}
                       onBlur={() => setFocusedField(null)}
-                      placeholder="john@example.com"
+                      placeholder="abc@example.com"
                       required
                     />
                   </div>
