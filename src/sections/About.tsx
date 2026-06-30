@@ -77,7 +77,7 @@ export default function About() {
             <div className="about-image-container">
               <div className="image-glow" />
               <img
-                src="/assets/profile.jpg"
+                src="/assets/profile1.jpg"
                 alt="Ghulam Qadir"
                 className="about-image"
               />
