@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import {
   Code2,
@@ -25,7 +25,7 @@ const categories = [
 const skillsList = [
   { name: 'HTML5', category: 'frontend', level: 95, icon: Code2, color: '#e34c26' },
   { name: 'CSS3', category: 'frontend', level: 92, icon: Palette, color: '#264de4' },
-  { name: 'JavaScript (ES6+)', category: 'frontend', level: 88, icon: Terminal, color: '#f7df1e' },
+  { name: 'JavaScript', category: 'frontend', level: 88, icon: Terminal, color: '#f7df1e' },
   { name: 'React.js', category: 'frontend', level: 85, icon: Layers, color: '#61dafb' },
   { name: 'Bootstrap', category: 'frontend', level: 90, icon: Globe, color: '#7952b3' },
   { name: 'Django', category: 'backend', level: 82, icon: Server, color: '#44b78b' },
@@ -33,15 +33,23 @@ const skillsList = [
   { name: 'PostgreSQL', category: 'backend', level: 80, icon: Database, color: '#336791' },
   { name: 'REST API', category: 'backend', level: 85, icon: Globe, color: '#ff6b6b' },
   { name: 'Python', category: 'data', level: 90, icon: Terminal, color: '#3776ab' },
-  { name: 'Machine Learning', category: 'data', level: 78, icon: Brain, color: '#ff6b9d' },
+  { name: 'ML', category: 'data', level: 78, icon: Brain, color: '#ff6b9d' },
   { name: 'Data Analysis', category: 'data', level: 85, icon: BarChart3, color: '#10b981' },
-  { name: 'Pandas & NumPy', category: 'data', level: 88, icon: Cpu, color: '#150458' },
+  { name: 'Pandas', category: 'data', level: 88, icon: Cpu, color: '#150458' },
   { name: 'Scikit-Learn', category: 'data', level: 80, icon: Brain, color: '#f7931e' },
-  { name: 'Git & GitHub', category: 'tools', level: 88, icon: GitBranch, color: '#f05032' },
-  { name: 'Jupyter Notebook', category: 'tools', level: 90, icon: Terminal, color: '#f37626' },
+  { name: 'Git', category: 'tools', level: 88, icon: GitBranch, color: '#f05032' },
+  { name: 'Jupyter', category: 'tools', level: 90, icon: Terminal, color: '#f37626' },
   { name: 'Streamlit', category: 'tools', level: 75, icon: Globe, color: '#ff4b4b' },
   { name: 'VS Code', category: 'tools', level: 92, icon: Code2, color: '#007acc' },
 ];
+
+const chunkArray = <T,>(arr: T[], size: number): T[][] => {
+  const chunks: T[][] = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size));
+  }
+  return chunks;
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -67,10 +75,16 @@ export default function Skills() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const filteredSkills =
-    activeCategory === 'all'
+  const filteredSkills = useMemo(() => {
+    return activeCategory === 'all'
       ? skillsList
       : skillsList.filter((s) => s.category === activeCategory);
+  }, [activeCategory]);
+
+  // Group into pages of 2 skills each
+  const skillPages = useMemo(() => {
+    return chunkArray(filteredSkills, 2);
+  }, [filteredSkills]);
 
   return (
     <section id="skills" className="skills">
@@ -109,7 +123,7 @@ export default function Skills() {
           ))}
         </motion.div>
 
-        {/* Skills Grid */}
+        {/* Skills Grid - Pages of 2 */}
         <motion.div
           className="skills-grid"
           variants={containerVariants}
@@ -118,42 +132,48 @@ export default function Skills() {
           key={activeCategory}
         >
           <AnimatePresence mode="popLayout">
-            {filteredSkills.map((skill) => (
+            {skillPages.map((page, pageIndex) => (
               <motion.div
-                key={skill.name}
-                className="skill-card"
+                key={`page-${pageIndex}`}
+                className="skills-page"
                 variants={itemVariants}
                 layout
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                whileHover={{ y: -6, scale: 1.02, transition: { type: 'spring', stiffness: 300 } }}
               >
-                <div className="skill-header">
+                {page.map((skill) => (
                   <div
-                    className="skill-icon"
-                    style={{ background: `${skill.color}18`, color: skill.color }}
+                    key={skill.name}
+                    className="skill-card"
                   >
-                    <skill.icon size={22} />
+                    <div className="skill-header">
+                      <div
+                        className="skill-icon"
+                        style={{ background: `${skill.color}18`, color: skill.color }}
+                      >
+                        <skill.icon size={22} />
+                      </div>
+                      <span className="skill-name">{skill.name}</span>
+                      <span className="skill-percent">{skill.level}%</span>
+                    </div>
+                    <div className="skill-bar-bg">
+                      <motion.div
+                        className="skill-bar-fill"
+                        initial={{ width: 0 }}
+                        animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
+                        transition={{
+                          duration: 1.5,
+                          delay: 0.3 + Math.random() * 0.3,
+                          ease: 'easeOut',
+                        }}
+                        style={{
+                          background: `linear-gradient(90deg, ${skill.color}, ${skill.color}99)`,
+                        }}
+                      />
+                    </div>
                   </div>
-                  <span className="skill-name">{skill.name}</span>
-                  <span className="skill-percent">{skill.level}%</span>
-                </div>
-                <div className="skill-bar-bg">
-                  <motion.div
-                    className="skill-bar-fill"
-                    initial={{ width: 0 }}
-                    animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                    transition={{
-                      duration: 1.5,
-                      delay: 0.3 + Math.random() * 0.3,
-                      ease: 'easeOut',
-                    }}
-                    style={{
-                      background: `linear-gradient(90deg, ${skill.color}, ${skill.color}99)`,
-                    }}
-                  />
-                </div>
+                ))}
               </motion.div>
             ))}
           </AnimatePresence>
