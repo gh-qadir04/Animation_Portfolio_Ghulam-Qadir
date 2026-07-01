@@ -42,8 +42,30 @@ const projectsList = [
       'Custom Animations',
     ],
   },
+
   {
-    id: 2,
+  id: 2,
+  title: 'Animation Portfolio — Ghulam Qadir',
+  category: 'web',
+  description:
+    'A modern, interactive portfolio website featuring smooth scroll animations, 3D card tilt effects with mouse-tracking perspective, and a dynamic project showcase with filtering by category.',
+  tech: ['React 18', 'Vite', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Lucide React'],
+  icon: LayoutDashboard,
+  color: '#06b6d4',
+  github: 'https://github.com/gh-qadir04/Animation_Portfolio_Ghulam-Qadir',
+  live: 'https://qadirportfolioanimation.netlify.app/',
+  features: [
+    'Smooth Scroll Animations',
+    '3D Tilt Cards with Mouse Tracking',
+    'Project Filtering by Category',
+    'Responsive Design',
+    'Project Modal with Details',
+    'Dark Theme with Gradient Accents',
+  ],
+},
+
+  {
+    id: 3,
     title: 'SaaS Analytics Dashboard',
     category: 'web',
     description:
@@ -61,25 +83,7 @@ const projectsList = [
       'Dark Mode',
     ],
   },
-  {
-    id: 3,
-    title: 'Portfolio CMS Builder',
-    category: 'web',
-    description:
-      'A dynamic portfolio builder where users can create and customize their own portfolios with drag-and-drop functionality and real-time preview.',
-    tech: ['React', 'Django', 'PostgreSQL', 'Bootstrap', 'JavaScript'],
-    icon: LayoutDashboard,
-    color: '#06b6d4',
-    github: 'https://github.com/gh-qadir04',
-    live: '#',
-    features: [
-      'Drag & Drop',
-      'Live Preview',
-      'Custom Themes',
-      'SEO Optimization',
-      'Export to PDF',
-    ],
-  },
+  
   {
     id: 4,
     title: 'Real Estate Listing App',
