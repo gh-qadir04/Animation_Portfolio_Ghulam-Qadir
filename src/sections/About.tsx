@@ -47,7 +47,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="about" className="about">
+    <section id="about" className="about" aria-label="About Ghulam Qadir">
       <div className="glow-orb glow-orb-1" />
       <div className="glow-orb glow-orb-2" />
 
@@ -78,8 +78,11 @@ export default function About() {
               <div className="image-glow" />
               <img
                 src="/assets/profile1.jpg"
-                alt="Ghulam Qadir"
+                alt="Ghulam Qadir - Full-Stack Developer and Data Scientist from Ghotki, Pakistan, wearing a navy blue suit with red tie. Computer Science student at IUB with Dean's Honor List recognition."
                 className="about-image"
+                width="400"
+                height="400"
+                loading="eager"
               />
               <div className="image-border" />
               <motion.div
@@ -111,8 +114,8 @@ export default function About() {
             </motion.h3>
 
             <motion.p variants={itemVariants} className="about-text">
-              I'm Ghulam Qadir, a Computer Science student at The Islamia
-              University of Bahawalpur (IUB), currently in my 7th semester with
+              I'm <strong>Ghulam Qadir</strong>, a Computer Science student at{' '}
+              <strong>The Islamia University of Bahawalpur (IUB)</strong>, currently in my 7th semester with
               a specialization in Data Science & AI. I've made the Dean's Honor
               List and hold certifications in Machine Learning and Python from
               DataCamp.

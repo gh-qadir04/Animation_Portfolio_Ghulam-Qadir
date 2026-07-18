@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+
+# Traditional search engines (already covered by the wildcard above,
+# listed explicitly for clarity)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI crawlers — explicitly welcomed. A portfolio has nothing to protect
+# and everything to gain from being citable in AI search/answers.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://qadirportfolioanimation.netlify.app/sitemap.xml

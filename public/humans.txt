@@ -1,0 +1,16 @@
+/* TEAM */
+Developer: Ghulam Qadir
+Site: https://qadirportfolioanimation.netlify.app/
+Location: Ghotki, Sindh, Pakistan
+GitHub: https://github.com/gh-qadir04
+LinkedIn: https://www.linkedin.com/in/ghulam-qadir-a68945416
+
+/* THANKS */
+Name: The Islamia University of Bahawalpur
+Name: DataCamp Online Learning Platform
+
+/* SITE */
+Last update: 2026/07/15
+Standards: HTML5, CSS3, TypeScript
+Components: React 18, Vite, Tailwind CSS, Framer Motion
+Software: VS Code, Git, Figma

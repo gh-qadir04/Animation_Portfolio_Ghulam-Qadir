@@ -1,25 +1,231 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#050505" />
-    <meta name="description" content="Ghulam Qadir - Full Stack Developer | Data Scientist | Machine Learning Engineer. Building modern web applications and data-driven solutions." />
-    <meta name="keywords" content="Ghulam Qadir, Full Stack Developer, React, Django, Data Science, Machine Learning, Pakistan" />
-    <meta name="author" content="Ghulam Qadir" />
-    <meta property="og:title" content="Ghulam Qadir - Portfolio" />
-    <meta property="og:description" content="Full Stack Developer & Data Scientist specializing in React, Django, and Machine Learning" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <title>Ghulam Qadir | Full Stack Developer & Data Scientist</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to view this portfolio.</noscript>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==================== BASIC META ==================== -->
+  <title>Ghulam Qadir | Full-Stack Developer & Data Scientist | React, Django, ML</title>
+  <meta name="description" content="Ghulam Qadir - Full-Stack Web Developer & Data Scientist from Ghotki, Pakistan. Specializing in React, Django, PostgreSQL, and Machine Learning. 10+ projects delivered. Dean's Honor List at IUB. Available for freelance work." />
+  <meta name="keywords" content="Ghulam Qadir, full-stack developer, React developer, Django developer, data scientist, machine learning engineer, web developer Pakistan, freelance developer, IUB student, Python developer, portfolio, Ghotki developer" />
+  <meta name="author" content="Ghulam Qadir" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="bingbot" content="index, follow" />
+
+  <!-- Canonical URL (Prevents duplicate content issues) -->
+  <link rel="canonical" href="https://qadirportfolioanimation.netlify.app/" />
+
+  <!-- ==================== FAVICONS ==================== -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+
+  <!-- ==================== OPEN GRAPH (Facebook / LinkedIn) ==================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://qadirportfolioanimation.netlify.app/" />
+  <meta property="og:title" content="Ghulam Qadir | Full-Stack Developer & Data Scientist" />
+  <meta property="og:description" content="Portfolio of Ghulam Qadir - Building modern web apps with React & Django, and intelligent ML solutions. 10+ projects, Dean's Honor List." />
+  <meta property="og:image" content="https://qadirportfolioanimation.netlify.app/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ghulam Qadir - Full-Stack Developer and Data Scientist Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Ghulam Qadir Portfolio" />
+
+  <!-- ==================== TWITTER CARDS ==================== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://qadirportfolioanimation.netlify.app/" />
+  <meta name="twitter:title" content="Ghulam Qadir | Full-Stack Developer & Data Scientist" />
+  <meta name="twitter:description" content="Portfolio of Ghulam Qadir - React, Django, ML expert. Available for freelance projects." />
+  <meta name="twitter:image" content="https://qadirportfolioanimation.netlify.app/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Ghulam Qadir Portfolio - Full-Stack Developer & Data Scientist" />
+  <meta name="twitter:creator" content="@ghulamqadir" />
+  <meta name="twitter:site" content="@ghulamqadir" />
+
+  <!-- ==================== THEME COLOR ==================== -->
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="msapplication-TileColor" content="#0f172a" />
+
+  <!-- ==================== PERFORMANCE: PRECONNECT ==================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- ==================== GOOGLE SITE VERIFICATION (Add after Step 10) ==================== -->
+  <!-- <meta name="google-site-verification" content="YOUR_CODE_HERE" /> -->
+
+  <!-- ==================== STRUCTURED DATA: PERSON SCHEMA ==================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ghulam Qadir",
+    "jobTitle": "Full-Stack Web Developer & Data Scientist",
+    "url": "https://qadirportfolioanimation.netlify.app/",
+    "image": "https://qadirportfolioanimation.netlify.app/assets/profile-photo.jpg",
+    "description": "Full-Stack Developer specializing in React, Django, and Machine Learning. Computer Science student at IUB with Dean's Honor List recognition.",
+    "email": "mailto:ghulamqadir04@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ghotki",
+      "addressRegion": "Sindh",
+      "addressCountry": "PK"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "The Islamia University of Bahawalpur",
+      "sameAs": "https://www.iub.edu.pk/"
+    },
+    "knowsAbout": [
+      "React.js",
+      "Django",
+      "Python",
+      "Machine Learning",
+      "PostgreSQL",
+      "TypeScript",
+      "Tailwind CSS",
+      "Data Science",
+      "Natural Language Processing",
+      "REST API Development",
+      "Next.js",
+      "JavaScript",
+      "Framer Motion",
+      "Vite"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "sameAs": [
+      "https://github.com/gh-qadir04",
+      "https://www.linkedin.com/in/ghulam-qadir-a68945416"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Software Developer",
+      "occupationLocation": {
+        "@type": "City",
+        "name": "Ghotki, Pakistan"
+      },
+      "skills": "React, Django, Python, Machine Learning, PostgreSQL, TypeScript"
+    }
+  }
+  </script>
+
+  <!-- ==================== STRUCTURED DATA: PORTFOLIO WEBSITE ==================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Ghulam Qadir Portfolio",
+    "url": "https://qadirportfolioanimation.netlify.app/",
+    "description": "Portfolio of Ghulam Qadir - Full-Stack Developer & Data Scientist showcasing React, Django, and ML projects.",
+    "author": {
+      "@type": "Person",
+      "name": "Ghulam Qadir"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Ghulam Qadir"
+    }
+  }
+  </script>
+
+  <!-- ==================== STRUCTURED DATA: PROJECTS ==================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Ghulam Qadir Portfolio Projects",
+    "itemListElement": [
+      {
+        "@type": "SoftwareApplication",
+        "position": 1,
+        "name": "Mentor Michael FX - Trading Platform",
+        "applicationCategory": "WebApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Professional web platform for forex and commodity trading mentor specializing in XAU/USD (Gold)."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 2,
+        "name": "SaaS Analytics Dashboard",
+        "applicationCategory": "WebApplication",
+        "operatingSystem": "Any",
+        "description": "Comprehensive analytics dashboard with real-time data visualization and user management."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 3,
+        "name": "HR Resume Parser",
+        "applicationCategory": "WebApplication",
+        "operatingSystem": "Any",
+        "description": "Intelligent resume parsing system using NLP to extract information and match candidates."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 4,
+        "name": "Patient Attendance Predictor",
+        "applicationCategory": "WebApplication",
+        "operatingSystem": "Any",
+        "description": "Predictive analytics model for dental appointment no-shows using machine learning."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 5,
+        "name": "Sentiment Analysis API",
+        "applicationCategory": "WebApplication",
+        "operatingSystem": "Any",
+        "description": "Real-time sentiment analysis service with REST API endpoints."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 6,
+        "name": "Cafe Chatbot AI",
+        "applicationCategory": "WebApplication",
+        "operatingSystem": "Any",
+        "description": "Intelligent chatbot for cafe customer service using NLP and machine learning."
+      }
+    ]
+  }
+  </script>
+
+  <!-- ==================== STRUCTURED DATA: BREADCRUMB ==================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://qadirportfolioanimation.netlify.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projects",
+        "item": "https://qadirportfolioanimation.netlify.app/#projects"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "About",
+        "item": "https://qadirportfolioanimation.netlify.app/#about"
+      }
+    ]
+  }
+  </script>
+<base target="_blank">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
 </html>

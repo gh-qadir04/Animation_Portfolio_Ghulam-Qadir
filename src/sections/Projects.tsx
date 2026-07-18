@@ -30,6 +30,8 @@ const projectsList = [
     description:
       'A professional web platform for a forex and commodity trading mentor, specializing in XAU/USD (Gold). Built with a modern, responsive UI to showcase mentorship services, trading strategies, and market insights.',
     tech: ['React', 'Tailwind CSS', 'JavaScript', 'Netlify'],
+    image: '/assets/mentormichael.jpg',
+    imageAlt: 'Mentor Michael FX trading platform dashboard showing XAU/USD Gold price charts, buy signals, and professional forex trading interface with dark theme',
     icon: TrendingUp,
     color: '#fbbf24',
     github: 'https://github.com/gh-qadir04/MentorMichaelfx-website-trading-XAUUSD',
@@ -42,28 +44,26 @@ const projectsList = [
       'Custom Animations',
     ],
   },
-
   {
-  id: 2,
-  title: 'Animation Portfolio — Ghulam Qadir',
-  category: 'web',
-  description:
-    'A modern, interactive portfolio website featuring smooth scroll animations, 3D card tilt effects with mouse-tracking perspective, and a dynamic project showcase with filtering by category.',
-  tech: ['React 18', 'Vite', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Lucide React'],
-  icon: LayoutDashboard,
-  color: '#06b6d4',
-  github: 'https://github.com/gh-qadir04/Animation_Portfolio_Ghulam-Qadir',
-  live: 'https://qadirportfolioanimation.netlify.app/',
-  features: [
-    'Smooth Scroll Animations',
-    '3D Tilt Cards with Mouse Tracking',
-    'Project Filtering by Category',
-    'Responsive Design',
-    'Project Modal with Details',
-    'Dark Theme with Gradient Accents',
-  ],
-},
-
+    id: 2,
+    title: 'Animation Portfolio — Ghulam Qadir',
+    category: 'web',
+    description:
+      'A modern, interactive portfolio website featuring smooth scroll animations, 3D card tilt effects with mouse-tracking perspective, and a dynamic project showcase with filtering by category.',
+    tech: ['React 18', 'Vite', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Lucide React'],
+    icon: LayoutDashboard,
+    color: '#06b6d4',
+    github: 'https://github.com/gh-qadir04/Animation_Portfolio_Ghulam-Qadir',
+    live: 'https://qadirportfolioanimation.netlify.app/',
+    features: [
+      'Smooth Scroll Animations',
+      '3D Tilt Cards with Mouse Tracking',
+      'Project Filtering by Category',
+      'Responsive Design',
+      'Project Modal with Details',
+      'Dark Theme with Gradient Accents',
+    ],
+  },
   {
     id: 3,
     title: 'SaaS Analytics Dashboard',
@@ -83,7 +83,6 @@ const projectsList = [
       'Dark Mode',
     ],
   },
-  
   {
     id: 4,
     title: 'Real Estate Listing App',
@@ -252,7 +251,7 @@ export default function Projects() {
       : projectsList.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="projects" className="projects">
+    <section id="projects" className="projects" aria-label="Portfolio Projects">
       <div className="glow-orb glow-orb-1" />
 
       <div className="section-container" ref={ref}>
@@ -308,14 +307,25 @@ export default function Projects() {
               >
                 <TiltCard className="project-card">
                   <div className="project-image-wrapper">
-                    <div
-                      className="project-image"
-                      style={{
-                        background: `linear-gradient(135deg, ${project.color}18, ${project.color}05)`,
-                      }}
-                    >
-                      <project.icon size={48} style={{ color: project.color }} />
-                    </div>
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.imageAlt}
+                        className="project-image"
+                        width="800"
+                        height="450"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div
+                        className="project-image-placeholder"
+                        style={{
+                          background: `linear-gradient(135deg, ${project.color}18, ${project.color}05)`,
+                        }}
+                      >
+                        <project.icon size={48} style={{ color: project.color }} />
+                      </div>
+                    )}
                     <div className="project-overlay">
                       <motion.button
                         className="project-view-btn"
@@ -392,16 +402,31 @@ export default function Projects() {
               >
                 <X size={24} />
               </button>
-              <div
-                className="modal-header"
-                style={{
-                  background: `linear-gradient(135deg, ${selectedProject.color}18, ${selectedProject.color}05)`,
-                }}
-              >
-                <selectedProject.icon
-                  size={64}
-                  style={{ color: selectedProject.color }}
-                />
+              <div className="modal-header">
+                {selectedProject.image ? (
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.imageAlt}
+                    className="modal-project-image"
+                    width="800"
+                    height="450"
+                  />
+                ) : (
+                  <div
+                    style={{
+                      background: `linear-gradient(135deg, ${selectedProject.color}18, ${selectedProject.color}05)`,
+                      padding: '40px',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <selectedProject.icon
+                      size={64}
+                      style={{ color: selectedProject.color }}
+                    />
+                  </div>
+                )}
               </div>
               <div className="modal-content">
                 <h3 className="modal-title">{selectedProject.title}</h3>

@@ -81,4 +81,4 @@ npm run dev
 ├── package.json
 ├── tailwind.config.js
 ├── tsconfig.json
-└── vite.config.ts
+└── vite.config.tsx
