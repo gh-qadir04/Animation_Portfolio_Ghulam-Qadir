@@ -7,8 +7,8 @@
     "dev": "vite --port 5173",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "postbuild": "react-snap"
+    "preview": "vite preview"
+    // "postbuild": "react-snap"
 
   },
   "dependencies": {
